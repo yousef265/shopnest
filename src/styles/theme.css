@@ -1,19 +1,107 @@
 @import "tailwindcss";
 
-@theme {
-    --color-brand-50: #eef2ff;
-    --color-brand-100: #e0e7ff;
-    --color-brand-500: #6366f1;
-    --color-brand-600: #4f46e5;
-    --color-brand-700: #4338ca;
+/* ========================================
+   ShopNest Design System
+   Brand: Modern Minimal Premium
+   Primary: Indigo
+======================================== */
 
-    --color-surface: #ffffff;
-    --color-surface-secondary: #f8fafc;
+/* 1. Light Theme */
+:root {
+    color-scheme: light;
 
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #64748b;
+    /* Brand */
+    --brand-50: #eef2ff;
+    --brand-100: #e0e7ff;
+    --brand-300: #a5b4fc;
+    --brand-500: #6366f1;
+    --brand-600: #4f46e5;
+    --brand-700: #4338ca;
+    --brand-900: #312e81;
 
-    --color-border: #e2e8f0;
+    /* Semantic Colors */
+    --background: #ffffff;
+    --surface: #ffffff;
+    --surface-secondary: #f8fafc;
+    --surface-tertiary: #f1f5f9;
 
-    --font-sans: "Inter", Arial, sans-serif;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+
+    --border: #e2e8f0;
+    --border-strong: #cbd5e1;
+
+    /* Feedback */
+    --success: #16a34a;
+    --warning: #d97706;
+    --error: #dc2626;
+    --info: #2563eb;
+
+    /* Effects */
+    --shadow-color: 15 23 42;
+
+    /* Typography */
+    --font-sans: "Inter", "Cairo", Arial, sans-serif;
+
+    /* Radius */
+    --radius-card: 1rem;
+    --radius-button: 0.625rem;
+}
+
+/* 2. Dark Theme */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --background: #0b1120;
+    --surface: #111827;
+    --surface-secondary: #1e293b;
+    --surface-tertiary: #273449;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --border: #273449;
+    --border-strong: #334155;
+
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --info: #60a5fa;
+
+    --shadow-color: 0 0 0;
+}
+
+/* 3. Tailwind Theme Mapping */
+@theme inline {
+    --color-brand-50: var(--brand-50);
+    --color-brand-100: var(--brand-100);
+    --color-brand-300: var(--brand-300);
+    --color-brand-500: var(--brand-500);
+    --color-brand-600: var(--brand-600);
+    --color-brand-700: var(--brand-700);
+    --color-brand-900: var(--brand-900);
+
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-surface-secondary: var(--surface-secondary);
+    --color-surface-tertiary: var(--surface-tertiary);
+
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+
+    --color-border: var(--border);
+    --color-border-strong: var(--border-strong);
+
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-error: var(--error);
+    --color-info: var(--info);
+
+    --font-sans: "Inter", "Cairo", Arial, sans-serif;
+
+    --radius-card: 1rem;
+    --radius-button: 0.625rem;
 }
