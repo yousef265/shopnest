@@ -1,9 +1,12 @@
 import { Heart, ShoppingCart } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import AccountMenu from "./AccountMenu";
 
 const HeaderActions = () => {
     return (
         <div className="flex shrink-0 items-center gap-2">
+            {/* Wishlist */}
+
             <NavLink
                 to="/wishlist"
                 aria-label="Wishlist"
@@ -17,6 +20,8 @@ const HeaderActions = () => {
             >
                 <Heart size={21} strokeWidth={1.8} />
             </NavLink>
+            {/* Cart */}
+
             <NavLink
                 to="/cart"
                 aria-label="Shopping cart"
@@ -30,6 +35,10 @@ const HeaderActions = () => {
             >
                 <ShoppingCart size={21} strokeWidth={1.8} />
             </NavLink>
+
+            {/* AccountMenu */}
+
+            <AccountMenu />
         </div>
     );
 };
