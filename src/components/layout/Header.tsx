@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Container from "../common/Container";
 import AnnouncementBar from "./AnnouncementBar";
+import SearchBar from "./SearchBar";
 
 const navigationLinks = [
     { label: "Home", to: "/" },
@@ -16,6 +17,7 @@ const Header = () => (
 
         <header className="border-b border-border bg-surface">
             <Container className="flex min-h-20 items-center justify-between gap-8">
+                {/* Logo */}
                 <NavLink to="/" aria-label="ShopNest Home" className="shrink-0 text-2xl font-bold tracking-tighter text-brand-600">
                     ShopNest
                 </NavLink>
@@ -32,6 +34,9 @@ const Header = () => (
                         </NavLink>
                     ))}
                 </nav>
+
+                {/* Search Bar */}
+                <SearchBar />
             </Container>
         </header>
     </>
