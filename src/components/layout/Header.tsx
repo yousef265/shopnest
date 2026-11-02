@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import Container from "../common/Container";
 import AnnouncementBar from "./AnnouncementBar";
 import SearchBar from "./SearchBar";
+import HeaderActions from "./HeaderActions";
 
 const navigationLinks = [
     { label: "Home", to: "/" },
@@ -37,6 +38,9 @@ const Header = () => (
 
                 {/* Search Bar */}
                 <SearchBar />
+
+                {/* Action Header */}
+                <HeaderActions />
             </Container>
         </header>
     </>
