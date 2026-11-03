@@ -1,13 +1,14 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, Ref } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonSize = "sm" | "md" | "lg" | "icon";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
     size?: ButtonSize;
     isLoading?: boolean;
+    ref?: Ref<HTMLButtonElement>;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -26,13 +27,15 @@ const sizeStyles: Record<ButtonSize, string> = {
     sm: "min-h-9 px-3 text-sm",
     md: "min-h-11 px-5 text-sm",
     lg: "min-h-12 px-6 text-base",
+    icon: "size-10 p-0",
 };
 
-const Button = ({ variant = "primary", size = "md", isLoading = false, disabled = false, type = "button", className = "", children, ...props }: ButtonProps) => {
+const Button = ({ ref, variant = "primary", size = "md", isLoading = false, disabled = false, type = "button", className = "", children, ...props }: ButtonProps) => {
     const isDisabled = disabled || isLoading;
 
     return (
         <button
+            ref={ref}
             type={type}
             disabled={isDisabled}
             className={[

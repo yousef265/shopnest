@@ -10,7 +10,11 @@
         "search": "ابحث عن المنتجات...",
         "footer": {
             "copyright": "جميع الحقوق محفوظة."
-        }
+        },
+        "wishlist": "المفضلة",
+        "cart": "سلة التسوق",
+        "closeMenu": "إغلاق القائمة",
+        "mobileNavigation": "قائمة التنقل"
     },
     "announcement": {
         "message": "اكتشف منتجات مميزة تناسب ذوقك في ShopNest"

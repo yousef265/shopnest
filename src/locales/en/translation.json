@@ -10,7 +10,11 @@
         "search": "Search products...",
         "footer": {
             "copyright": "All rights reserved."
-        }
+        },
+        "wishlist": "Wishlist",
+        "cart": "Shopping Cart",
+        "closeMenu": "Close menu",
+        "mobileNavigation": "Mobile navigation"
     },
     "announcement": {
         "message": "Discover something you'll love at ShopNest"

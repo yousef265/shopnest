@@ -15,6 +15,7 @@ const SearchBar = () => {
 
                     <input
                         type="search"
+                        name="search"
                         value={searchValue}
                         onChange={(event) => setSearchValue(event.target.value)}
                         placeholder={t("common.search")}

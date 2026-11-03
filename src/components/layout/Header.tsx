@@ -5,9 +5,13 @@ import Container from "../common/Container";
 import AnnouncementBar from "./AnnouncementBar";
 import SearchBar from "./SearchBar";
 import HeaderActions from "./HeaderActions";
+import { useCallback, useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
     const { t } = useTranslation();
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navigationLinks = [
         { label: t("common.home"), to: "/" },
@@ -16,6 +20,14 @@ const Header = () => {
         { label: t("common.about"), to: "/about" },
         { label: t("common.contact"), to: "/contact" },
     ];
+
+    const handleMenuToggle = useCallback(() => {
+        setIsMobileMenuOpen((prev) => !prev);
+    }, []);
+
+    const handleMenuClose = useCallback(() => {
+        setIsMobileMenuOpen(false);
+    }, []);
 
     return (
         <>
@@ -49,9 +61,11 @@ const Header = () => {
                     </div>
 
                     {/* Header Actions */}
-                    <HeaderActions />
+                    <HeaderActions onMenuClick={handleMenuToggle} isMobileMenuOpen={isMobileMenuOpen} />
                 </Container>
             </header>
+            {/* Mobile Menu */}
+            <MobileMenu isOpen={isMobileMenuOpen} onClose={handleMenuClose} navigationLinks={navigationLinks} />
         </>
     );
 };
