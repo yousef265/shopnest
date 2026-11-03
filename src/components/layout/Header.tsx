@@ -22,19 +22,21 @@ const Header = () => {
             <AnnouncementBar />
 
             <header className="border-b border-border bg-surface">
-                <Container className="flex min-h-20 items-center justify-between gap-8">
+                <Container className="flex min-h-20 items-center justify-between gap-4 lg:gap-6">
                     {/* Logo */}
                     <NavLink to="/" aria-label="ShopNest Home" className="shrink-0 text-2xl font-bold tracking-tighter text-brand-600">
                         ShopNest
                     </NavLink>
 
                     {/* Desktop Navigation */}
-                    <nav aria-label="Main navigation" className="hidden items-center gap-7 md:flex">
+                    <nav aria-label="Main navigation" className="hidden flex-1 justify-center items-center gap-5 xl:flex">
                         {navigationLinks.map((link) => (
                             <NavLink
                                 key={link.to}
                                 to={link.to}
-                                className={({ isActive }) => ["text-sm font-medium transition-colors duration-200", isActive ? "text-brand-600" : "text-text-secondary hover:text-brand-600"].join(" ")}
+                                className={({ isActive }) =>
+                                    ["whitespace-nowrap text-sm font-medium transition-colors duration-200", isActive ? "text-brand-600" : "text-text-secondary hover:text-brand-600"].join(" ")
+                                }
                             >
                                 {link.label}
                             </NavLink>
@@ -42,7 +44,9 @@ const Header = () => {
                     </nav>
 
                     {/* Search Bar */}
-                    <SearchBar />
+                    <div className="ms-auto xl:ms-0">
+                        <SearchBar />
+                    </div>
 
                     {/* Header Actions */}
                     <HeaderActions />
