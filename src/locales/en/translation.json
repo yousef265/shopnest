@@ -1,0 +1,49 @@
+{
+    "common": {
+        "home": "Home",
+        "shop": "Shop",
+        "categories": "Categories",
+        "about": "About",
+        "contact": "Contact",
+        "login": "Login",
+        "register": "Sign Up",
+        "search": "Search products...",
+        "footer": {
+            "copyright": "All rights reserved."
+        }
+    },
+    "announcement": {
+        "message": "Discover something you'll love at ShopNest"
+    },
+    "home": {
+        "hero": {
+            "eyebrow": "WELCOME TO SHOPNEST",
+            "title": "Discover Your Next Favorite Thing",
+            "description": "Explore a carefully selected collection of products for your everyday life."
+        },
+        "categories": {
+            "eyebrow": "EXPLORE OUR COLLECTION",
+            "title": "Shop by Category",
+            "description": "Find exactly what you're looking for."
+        },
+        "featured": {
+            "eyebrow": "HANDPICKED FOR YOU",
+            "title": "Featured Products",
+            "description": "Discover some of our favorite picks."
+        },
+        "promotion": {
+            "eyebrow": "SPECIAL OFFERS",
+            "title": "Something Special Is Waiting",
+            "description": "Discover exciting offers and find something you'll love."
+        },
+        "newArrivals": {
+            "eyebrow": "JUST ARRIVED",
+            "title": "New Arrivals",
+            "description": "Take a look at what's new at ShopNest."
+        },
+        "benefits": {
+            "title": "Shopping Made Better",
+            "description": "A shopping experience designed around your needs."
+        }
+    }
+}

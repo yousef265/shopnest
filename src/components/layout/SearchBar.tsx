@@ -1,7 +1,9 @@
 import { Search, X } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const SearchBar = () => {
+    const { t } = useTranslation();
     const [searchValue, setSearchValue] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -15,7 +17,7 @@ const SearchBar = () => {
                         type="search"
                         value={searchValue}
                         onChange={(event) => setSearchValue(event.target.value)}
-                        placeholder="Search products..."
+                        placeholder={t("common.search")}
                         aria-label="Search products"
                         className="min-w-0 flex-1 bg-transparent text-sm text-text-primary outline-none placeholder:text-text-muted"
                     />
@@ -50,7 +52,7 @@ const SearchBar = () => {
                             autoFocus
                             value={searchValue}
                             onChange={(event) => setSearchValue(event.target.value)}
-                            placeholder="Search products..."
+                            placeholder={t("common.search")}
                             aria-label="Search products"
                             className="min-w-0 flex-1 bg-transparent text-sm text-text-primary outline-none placeholder:text-text-muted"
                         />

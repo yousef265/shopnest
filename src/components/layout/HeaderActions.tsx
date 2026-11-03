@@ -1,6 +1,7 @@
 import { Heart, ShoppingCart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import AccountMenu from "./AccountMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const HeaderActions = () => {
     return (
@@ -35,6 +36,9 @@ const HeaderActions = () => {
             >
                 <ShoppingCart size={21} strokeWidth={1.8} />
             </NavLink>
+
+            {/* Language */}
+            <LanguageSwitcher />
 
             {/* AccountMenu */}
 
