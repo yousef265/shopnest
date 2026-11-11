@@ -14,7 +14,13 @@
         "wishlist": "Wishlist",
         "cart": "Shopping Cart",
         "closeMenu": "Close menu",
-        "mobileNavigation": "Mobile navigation"
+        "mobileNavigation": "Mobile navigation",
+        "theme": {
+            "light": "Light Mode",
+            "dark": "Dark Mode",
+            "switchToLight": "Switch to light mode",
+            "switchToDark": "Switch to dark mode"
+        }
     },
     "announcement": {
         "message": "Discover something you'll love at ShopNest"

@@ -14,7 +14,13 @@
         "wishlist": "المفضلة",
         "cart": "سلة التسوق",
         "closeMenu": "إغلاق القائمة",
-        "mobileNavigation": "قائمة التنقل"
+        "mobileNavigation": "قائمة التنقل",
+        "theme": {
+            "light": "الوضع الفاتح",
+            "dark": "الوضع الداكن",
+            "switchToLight": "التبديل إلى الوضع الفاتح",
+            "switchToDark": "التبديل إلى الوضع الداكن"
+        }
     },
     "announcement": {
         "message": "اكتشف منتجات مميزة تناسب ذوقك في ShopNest"

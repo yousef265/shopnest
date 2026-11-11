@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Button from "../common/Button";
 import AccountMenu from "./AccountMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "../../features/theme/ThemeToggle";
 
 interface IProps {
     onMenuClick: () => void;
@@ -41,13 +42,10 @@ const HeaderActions = ({ onMenuClick, isMobileMenuOpen }: IProps) => {
                 <ShoppingCart size={21} strokeWidth={1.8} />
             </NavLink>
 
-            {/* Language - Desktop */}
-            <div className="hidden xl:block">
+            {/* Language & Theme Toggle & Account- Desktop */}
+            <div className="hidden items-center gap-2 xl:flex">
+                <ThemeToggle />
                 <LanguageSwitcher />
-            </div>
-
-            {/* Account - Desktop */}
-            <div className="hidden xl:block">
                 <AccountMenu />
             </div>
 

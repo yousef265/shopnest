@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Button from "../common/Button";
 import AccountMenu from "./AccountMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "../../features/theme/ThemeToggle";
 
 interface NavigationLink {
     label: string;
@@ -115,6 +116,10 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
                     {/* Language */}
                     <div className="mt-5 border-t border-border pt-4">
                         <LanguageSwitcher />
+                    </div>
+                    {/* Theme */}
+                    <div className="mt-5 border-t border-border pt-4">
+                        <ThemeToggle />
                     </div>
                 </nav>
             </aside>
