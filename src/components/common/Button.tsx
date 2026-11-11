@@ -18,7 +18,7 @@ const variantStyles: Record<ButtonVariant, string> = {
 
     outline: "border border-border bg-transparent text-text-primary hover:bg-surface-secondary",
 
-    ghost: "bg-transparent text-text-primary hover:bg-surface-secondary",
+    ghost: "bg-transparent text-text-secondary hover:bg-surface-secondary hover:text-brand-600",
 
     danger: "bg-error text-white hover:opacity-90",
 };
@@ -38,6 +38,7 @@ const Button = ({ ref, variant = "primary", size = "md", isLoading = false, disa
             ref={ref}
             type={type}
             disabled={isDisabled}
+            aria-busy={isLoading}
             className={[
                 "inline-flex items-center justify-center gap-2",
                 "rounded-button font-medium",

@@ -1,4 +1,4 @@
-type SectionHeadingAlign = "left" | "center";
+type SectionHeadingAlign = "start" | "center";
 
 interface SectionHeadingProps {
     title: string;
@@ -8,7 +8,7 @@ interface SectionHeadingProps {
     align?: SectionHeadingAlign;
 }
 
-const SectionHeading = ({ title, description, eyebrow, className = "", align = "left" }: SectionHeadingProps) => {
+const SectionHeading = ({ title, description, eyebrow, className = "", align = "start" }: SectionHeadingProps) => {
     return (
         <div className={["flex flex-col gap-3", align === "center" ? "items-center text-center" : "items-start text-start", className].join(" ")}>
             {eyebrow && <span className="text-sm font-semibold uppercase tracking-wider text-brand-600">{eyebrow}</span>}
