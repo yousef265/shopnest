@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
-import { Heart, ShoppingCart, X } from "lucide-react";
+import { X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import Button from "../common/Button";
+import Button from "../../common/Button";
 import AccountMenu from "./AccountMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "../../features/theme/ThemeToggle";
+import ThemeToggle from "../../../features/theme/ThemeToggle";
+import WishlistButton from "../../../features/wishlist/WishlistButton";
+import CartButton from "../../../features/cart/CartButton";
 
 interface NavigationLink {
     label: string;
@@ -25,6 +27,7 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
 
     useEffect(() => {
         if (!isOpen) return;
+
         closeButtonRef.current?.focus();
 
         const previousOverflow = document.body.style.overflow;
@@ -35,6 +38,7 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
                 onClose();
             }
         };
+
         window.addEventListener("keydown", handleKeyDown);
 
         return () => {
@@ -56,7 +60,6 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="mobile-menu-title"
-                aria-label={t("common.mobileNavigation")}
                 className="absolute inset-y-0 inset-s-0 flex w-[min(85vw,360px)] flex-col border-e border-border bg-surface shadow-xl"
             >
                 {/* Drawer Header */}
@@ -65,13 +68,13 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
                         ShopNest
                     </span>
 
-                    <Button ref={closeButtonRef} variant="secondary" size="icon" onClick={onClose} aria-label="Close menu">
+                    <Button ref={closeButtonRef} variant="secondary" size="icon" onClick={onClose} aria-label={t("common.closeMenu")}>
                         <X size={22} />
                     </Button>
                 </div>
 
                 {/* Navigation Links */}
-                <nav className="flex-1 overflow-y-auto p-2">
+                <nav aria-label={t("common.mobileNavigation")} className="flex-1 overflow-y-auto p-2">
                     <ul className="flex flex-col gap-2">
                         {navigationLinks.map((link) => (
                             <li key={link.to}>
@@ -92,24 +95,13 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
                     </ul>
 
                     {/* Shopping Links */}
-                    <div className="mt-6 border-t border-border pt-5">
-                        <NavLink
-                            to="/wishlist"
-                            onClick={onClose}
-                            className="flex items-center gap-3 rounded-button px-4 py-3 text-sm text-text-secondary hover:bg-surface-secondary hover:text-brand-600"
-                        >
-                            <Heart size={19} />
-                            {t("common.wishlist")}
-                        </NavLink>
-
-                        <NavLink to="/cart" onClick={onClose} className="flex items-center gap-3 rounded-button px-4 py-3 text-sm text-text-secondary hover:bg-surface-secondary hover:text-brand-600">
-                            <ShoppingCart size={19} />
-                            {t("common.cart")}
-                        </NavLink>
+                    <div className="mt-6 space-y-1 border-t border-border pt-4">
+                        <WishlistButton variant="menu" onClick={onClose} />
+                        <CartButton variant="menu" onClick={onClose} />
                     </div>
 
                     {/* Account */}
-                    <div className="mt-6 border-t border-border pt-5">
+                    <div className="mt-6 border-t border-border pt-4">
                         <AccountMenu />
                     </div>
 
@@ -117,6 +109,7 @@ const MobileMenu = ({ isOpen, onClose, navigationLinks }: MobileMenuProps) => {
                     <div className="mt-5 border-t border-border pt-4">
                         <LanguageSwitcher />
                     </div>
+
                     {/* Theme */}
                     <div className="mt-5 border-t border-border pt-4">
                         <ThemeToggle />

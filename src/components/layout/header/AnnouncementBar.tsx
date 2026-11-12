@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Container from "../common/Container";
+import Container from "../../common/Container";
 
 const AnnouncementBar = () => {
     const { t } = useTranslation();

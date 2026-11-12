@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
-import Container from "../common/Container";
 import AnnouncementBar from "./AnnouncementBar";
+import Container from "../../common/Container";
 import SearchBar from "./SearchBar";
 import HeaderActions from "./HeaderActions";
-import { useCallback, useState } from "react";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
@@ -36,12 +36,12 @@ const Header = () => {
             <header className="border-b border-border bg-surface">
                 <Container className="flex min-h-20 items-center justify-between gap-4 lg:gap-6">
                     {/* Logo */}
-                    <NavLink to="/" aria-label="ShopNest Home" className="shrink-0 text-2xl font-bold tracking-tighter text-brand-600">
+                    <NavLink to="/" aria-label={t("common.homeAriaLabel")} className="shrink-0 text-2xl font-bold tracking-tighter text-brand-600">
                         ShopNest
                     </NavLink>
 
                     {/* Desktop Navigation */}
-                    <nav aria-label="Main navigation" className="hidden flex-1 justify-center items-center gap-5 xl:flex">
+                    <nav aria-label={t("common.mainNavigation")} className="hidden flex-1 justify-center items-center gap-5 xl:flex">
                         {navigationLinks.map((link) => (
                             <NavLink
                                 key={link.to}

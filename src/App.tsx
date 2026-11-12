@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 
 import { router } from "./app/router";
-import LanguageProvider from "./providers/LanguageProvider";
+import LanguageProvider from "./app/providers/LanguageProvider";
 import ThemeSync from "./features/theme/ThemeSync";
 
 const App = () => {

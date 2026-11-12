@@ -8,12 +8,15 @@
         "login": "تسجيل الدخول",
         "register": "إنشاء حساب",
         "search": "ابحث عن المنتجات...",
+        "homeAriaLabel": "الصفحة الرئيسية لـ ShopNest",
+        "mainNavigation": "القائمة الرئيسية",
         "footer": {
             "copyright": "جميع الحقوق محفوظة."
         },
         "wishlist": "المفضلة",
         "cart": "سلة التسوق",
         "closeMenu": "إغلاق القائمة",
+        "openMenu": "فتح القائمة",
         "mobileNavigation": "قائمة التنقل",
         "theme": {
             "light": "الوضع الفاتح",
