@@ -1,8 +1,10 @@
 import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+import Button from "../../common/Button";
+
 const LanguageSwitcher = () => {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const currentLanguage = i18n.resolvedLanguage || "en";
 
@@ -10,16 +12,12 @@ const LanguageSwitcher = () => {
         const nextLanguage = currentLanguage === "en" ? "ar" : "en";
         i18n.changeLanguage(nextLanguage);
     };
+
     return (
-        <button
-            type="button"
-            onClick={handleChangeLanguage}
-            aria-label="Change Language"
-            className="flex h-10 items-center gap-2 rounded-button px-3 text-sm font-medium text-text-secondary transition-colors hover:bg-surface-secondary hover:text-brand-600"
-        >
-            <Globe size={19} strokeWidth={1.8} />
+        <Button variant="ghost" size="sm" onClick={handleChangeLanguage} aria-label={t("common.changeLanguage")} className="w-full justify-start p-3 min-h-10">
+            <Globe size={19} strokeWidth={1.8} aria-hidden="true" />
             <span>{currentLanguage === "en" ? "العربية" : "English"}</span>
-        </button>
+        </Button>
     );
 };
 

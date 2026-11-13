@@ -20,7 +20,7 @@ const ThemeToggle = () => {
             onClick={() => dispatch(toggleTheme())}
             aria-label={isDark ? t("common.theme.switchToLight") : t("common.theme.switchToDark")}
             title={isDark ? t("common.theme.switchToLight") : t("common.theme.switchToDark")}
-            className="w-full xl:w-fit justify-start rounded-button py-2.5 text-sm font-normal"
+            className="w-full justify-start rounded-button p-3 text-sm font-normal"
         >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
             <span className="xl:hidden text-sm font-medium">{isDark ? t("common.theme.dark") : t("common.theme.light")}</span>
