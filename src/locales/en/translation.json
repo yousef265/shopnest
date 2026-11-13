@@ -7,7 +7,10 @@
         "contact": "Contact",
         "login": "Login",
         "register": "Sign Up",
-        "search": "Search products...",
+        "searchProducts": "Search products",
+        "clearSearch": "Clear search",
+        "openSearch": "Open search",
+        "closeSearch": "Close search",
         "homeAriaLabel": "ShopNest Home",
         "mainNavigation": "Main navigation",
         "footer": {
